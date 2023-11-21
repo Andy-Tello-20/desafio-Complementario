@@ -7,7 +7,7 @@
             event.preventDefault()
             const input = document.getElementById('input-message')
             const newMsg ={
-                email,
+                usar: email,
                 body:input.value
             }
             input.value=''
