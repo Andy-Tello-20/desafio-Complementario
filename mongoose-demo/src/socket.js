@@ -1,4 +1,4 @@
-import {Server} from 'socket.io'
+import { Server } from 'socket.io'
 
 import MessageModel from './dao/models/messages.model.js'
 
@@ -14,6 +14,12 @@ export const InitSocket = async (httpServer) => {
 
         const messages = await MessageModel.find({})
         clientSocket.emit('Update-messages', messages)
+
+        clientSocket.on('new-message',async (newMsg) => {
+            await MessageModel.create(newMsg)
+            const messages = await MessageModel.find({})
+            clientSocket.emit('Update-messages', messages)
+        })
     })
 
 

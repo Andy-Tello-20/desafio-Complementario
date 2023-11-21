@@ -13,10 +13,21 @@
             input.value=''
             input.focus()
             socket.emit('new-message',newMsg)
+
+          
+
         })
 
     socket.on('Update-messages', (messages) => {
         console.log('messages', messages)
+        const logMessages = document.getElementById('log-messages');
+        logMessages.innerText = '';
+        messages.forEach((message) => {
+          const p = document.createElement('p');
+          p.innerText = `${message.user}: ${message.body}`;
+          logMessages.appendChild(p);
+        });
+
     })
 
     Swal.fire({
