@@ -1,5 +1,1 @@
-M3gPtTin1bfuAeSR
 
-mongodb+srv://andrest911:M3gPtTin1bfuAeSR@cluster0.nakuen6.mongodb.net/
-
-mongodb+srv://andrest911:M3gPtTin1bfuAeSR@cluster0.nakuen6.mongodb.net/?retryWrites=true&w=majority
